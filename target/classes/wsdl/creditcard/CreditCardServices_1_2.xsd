@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon">
+  <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects" schemaLocation="CreditCardServices_1_2_3.xsd"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardAccountStatements_V2Response">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="StatementData" nillable="true" type="q1:ArrayOfStatementDataClass" xmlns:q1="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardAccountStatements_V2Response" nillable="true" type="tns:ResponseMessageClass.GetCardAccountStatements_V2Response"/>
+  <xsd:complexType name="ResponseMessageClass.ResponseHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Code" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="Message" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="MessageCustomer" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SubCode" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ResponseHeader" nillable="true" type="tns:ResponseMessageClass.ResponseHeader"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardAccountStatementTransactions_V2Response">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Transactions" nillable="true" type="q2:ArrayOfCreditCardTransactionsClass" xmlns:q2="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardAccountStatementTransactions_V2Response" nillable="true" type="tns:ResponseMessageClass.GetCardAccountStatementTransactions_V2Response"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardDetailsFromNIC_V3Response">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CardList" nillable="true" type="q3:ArrayOfCardDetails_V2Class" xmlns:q3="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardDetailsFromNIC_V3Response" nillable="true" type="tns:ResponseMessageClass.GetCardDetailsFromNIC_V3Response"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardDetailsFromCardNumber_V2Response">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CardList" nillable="true" type="q4:ArrayOfCardDetailsClass" xmlns:q4="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardDetailsFromCardNumber_V2Response" nillable="true" type="tns:ResponseMessageClass.GetCardDetailsFromCardNumber_V2Response"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardPendingTransactionsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CreditCardOnlineTransactions" nillable="true" type="q5:ArrayOfCreditCardOnlineTransactionsClass" xmlns:q5="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardPendingTransactionsResponse" nillable="true" type="tns:ResponseMessageClass.GetCardPendingTransactionsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ValidateCardNumber_V2Response">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Response" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ValidateCardNumber_V2Response" nillable="true" type="tns:ResponseMessageClass.ValidateCardNumber_V2Response"/>
+  <xsd:complexType name="ResponseMessageClass.ValidateAccountNumberResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Response" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ValidateAccountNumberResponse" nillable="true" type="tns:ResponseMessageClass.ValidateAccountNumberResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ValidateCustomerNumberResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Response" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ValidateCustomerNumberResponse" nillable="true" type="tns:ResponseMessageClass.ValidateCustomerNumberResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ValidateOTPResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Response" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ValidateOTPResponse" nillable="true" type="tns:ResponseMessageClass.ValidateOTPResponse"/>
+  <xsd:complexType name="ResponseMessageClass.SendOTPResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Otp" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="RefferanceSerno" type="xsd:decimal"/>
+          <xsd:element minOccurs="0" name="Serno" type="xsd:decimal"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.SendOTPResponse" nillable="true" type="tns:ResponseMessageClass.SendOTPResponse"/>
+  <xsd:complexType name="ResponseMessageClass.PaymentCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.PaymentCardResponse" nillable="true" type="tns:ResponseMessageClass.PaymentCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.DisputeTransactionResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Reference" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.DisputeTransactionResponse" nillable="true" type="tns:ResponseMessageClass.DisputeTransactionResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ReIssueCardPINResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Reference" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ReIssueCardPINResponse" nillable="true" type="tns:ResponseMessageClass.ReIssueCardPINResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ActivateCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ActivateCardResponse" nillable="true" type="tns:ResponseMessageClass.ActivateCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.BlockCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.BlockCardResponse" nillable="true" type="tns:ResponseMessageClass.BlockCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.LostCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.LostCardResponse" nillable="true" type="tns:ResponseMessageClass.LostCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateCardSMSAleartResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateCardSMSAleartResponse" nillable="true" type="tns:ResponseMessageClass.UpdateCardSMSAleartResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateCardOTPEmailResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateCardOTPEmailResponse" nillable="true" type="tns:ResponseMessageClass.UpdateCardOTPEmailResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateeStatementEmailResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateeStatementEmailResponse" nillable="true" type="tns:ResponseMessageClass.UpdateeStatementEmailResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateAccountEstatementEmailResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateAccountEstatementEmailResponse" nillable="true" type="tns:ResponseMessageClass.UpdateAccountEstatementEmailResponse"/>
+  <xsd:complexType name="ResponseMessageClass.CardReplacementRequestResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.CardReplacementRequestResponse" nillable="true" type="tns:ResponseMessageClass.CardReplacementRequestResponse"/>
+  <xsd:complexType name="ResponseMessageClass.PrintCardStatementResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.PrintCardStatementResponse" nillable="true" type="tns:ResponseMessageClass.PrintCardStatementResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestSupplementaryCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestSupplementaryCardResponse" nillable="true" type="tns:ResponseMessageClass.RequestSupplementaryCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ChangeStatementDateResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ChangeStatementDateResponse" nillable="true" type="tns:ResponseMessageClass.ChangeStatementDateResponse"/>
+  <xsd:complexType name="ResponseMessageClass.FindCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Reason" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.FindCardResponse" nillable="true" type="tns:ResponseMessageClass.FindCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardSerialResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="SerNo" type="xsd:long"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardSerialResponse" nillable="true" type="tns:ResponseMessageClass.GetCardSerialResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardNumberFromSerialResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CardNo" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardNumberFromSerialResponse" nillable="true" type="tns:ResponseMessageClass.GetCardNumberFromSerialResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetBranchDetailsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Id" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetBranchDetailsResponse" nillable="true" type="tns:ResponseMessageClass.GetBranchDetailsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.TemporaryBlockCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.TemporaryBlockCardResponse" nillable="true" type="tns:ResponseMessageClass.TemporaryBlockCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.TemporaryUnblockCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.TemporaryUnblockCardResponse" nillable="true" type="tns:ResponseMessageClass.TemporaryUnblockCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ApplyWebCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CardNo" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ApplyWebCardResponse" nillable="true" type="tns:ResponseMessageClass.ApplyWebCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ApplySupplymentryCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CardNo" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ApplySupplymentryCardResponse" nillable="true" type="tns:ResponseMessageClass.ApplySupplymentryCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.CardUpgradeResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.CardUpgradeResponse" nillable="true" type="tns:ResponseMessageClass.CardUpgradeResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ActivateLifeInsuranceResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ActivateLifeInsuranceResponse" nillable="true" type="tns:ResponseMessageClass.ActivateLifeInsuranceResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetPointsBalanceResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Balance" type="xsd:decimal"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetPointsBalanceResponse" nillable="true" type="tns:ResponseMessageClass.GetPointsBalanceResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RedeemPointsUsingCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RedeemPointsUsingCardResponse" nillable="true" type="tns:ResponseMessageClass.RedeemPointsUsingCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetExpiredPointsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ExpiredAmount" type="xsd:decimal"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetExpiredPointsResponse" nillable="true" type="tns:ResponseMessageClass.GetExpiredPointsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RegisterGenieMerchantRegistrationResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RegisterGenieMerchantRegistrationResponse" nillable="true" type="tns:ResponseMessageClass.RegisterGenieMerchantRegistrationResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateGenieTransactionsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateGenieTransactionsResponse" nillable="true" type="tns:ResponseMessageClass.UpdateGenieTransactionsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateGenieMerchantStatusResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateGenieMerchantStatusResponse" nillable="true" type="tns:ResponseMessageClass.UpdateGenieMerchantStatusResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestBalanceTransferResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestBalanceTransferResponse" nillable="true" type="tns:ResponseMessageClass.RequestBalanceTransferResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestInstallmentAccelerationResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestInstallmentAccelerationResponse" nillable="true" type="tns:ResponseMessageClass.RequestInstallmentAccelerationResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestConvertTansactionToInstallmentResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestConvertTansactionToInstallmentResponse" nillable="true" type="tns:ResponseMessageClass.RequestConvertTansactionToInstallmentResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequesteStatementResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequesteStatementResponse" nillable="true" type="tns:ResponseMessageClass.RequesteStatementResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestForLettersResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestForLettersResponse" nillable="true" type="tns:ResponseMessageClass.RequestForLettersResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ChangeSingleTranLimitResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ChangeSingleTranLimitResponse" nillable="true" type="tns:ResponseMessageClass.ChangeSingleTranLimitResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestAddressResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Address01" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Address02" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Address03" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Address04" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Address05" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="SerNo" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="ZipCode" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestAddressResponse" nillable="true" type="tns:ResponseMessageClass.RequestAddressResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ChangeAddressResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ChangeAddressResponse" nillable="true" type="tns:ResponseMessageClass.ChangeAddressResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ValidateCardCVCResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Response" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ValidateCardCVCResponse" nillable="true" type="tns:ResponseMessageClass.ValidateCardCVCResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardCVCResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CVV" nillable="true" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="ExpDate" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardCVCResponse" nillable="true" type="tns:ResponseMessageClass.GetCardCVCResponse"/>
+  <xsd:complexType name="ResponseMessageClass.AddChangeAutopayDetailsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.AddChangeAutopayDetailsResponse" nillable="true" type="tns:ResponseMessageClass.AddChangeAutopayDetailsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.AddChangeAccountAutopayDetailsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.AddChangeAccountAutopayDetailsResponse" nillable="true" type="tns:ResponseMessageClass.AddChangeAccountAutopayDetailsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.TravelInsuranceRequestResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.TravelInsuranceRequestResponse" nillable="true" type="tns:ResponseMessageClass.TravelInsuranceRequestResponse"/>
+  <xsd:complexType name="ResponseMessageClass.TravelInsuranceClaimResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.TravelInsuranceClaimResponse" nillable="true" type="tns:ResponseMessageClass.TravelInsuranceClaimResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateTravellingAbroadResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateTravellingAbroadResponse" nillable="true" type="tns:ResponseMessageClass.UpdateTravellingAbroadResponse"/>
+  <xsd:complexType name="ResponseMessageClass.SendAdditionalDocumentRequestsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="DocumentList" nillable="true" type="q6:ArrayOfAdditionalDocumentClass" xmlns:q6="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.SendAdditionalDocumentRequestsResponse" nillable="true" type="tns:ResponseMessageClass.SendAdditionalDocumentRequestsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetCardPaymentTransactionsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Transactionss" nillable="true" type="q7:ArrayOfCreditCardPaymentTransactionsClass" xmlns:q7="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCardPaymentTransactionsResponse" nillable="true" type="tns:ResponseMessageClass.GetCardPaymentTransactionsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestLimitEnhancementResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestLimitEnhancementResponse" nillable="true" type="tns:ResponseMessageClass.RequestLimitEnhancementResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestToReleaseFDResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestToReleaseFDResponse" nillable="true" type="tns:ResponseMessageClass.RequestToReleaseFDResponse"/>
+  <xsd:complexType name="ResponseMessageClass.RequestToLinkAccountsResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.RequestToLinkAccountsResponse" nillable="true" type="tns:ResponseMessageClass.RequestToLinkAccountsResponse"/>
+  <xsd:complexType name="ResponseMessageClass.ValidateSABSFacilityResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.ValidateSABSFacilityResponse" nillable="true" type="tns:ResponseMessageClass.ValidateSABSFacilityResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateSABSFacilityResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateSABSFacilityResponse" nillable="true" type="tns:ResponseMessageClass.UpdateSABSFacilityResponse"/>
+  <xsd:complexType name="ResponseMessageClass.CancelSABSFacilityResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.CancelSABSFacilityResponse" nillable="true" type="tns:ResponseMessageClass.CancelSABSFacilityResponse"/>
+  <xsd:complexType name="ResponseMessageClass.UpdateSABSTransactionResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.UpdateSABSTransactionResponse" nillable="true" type="tns:ResponseMessageClass.UpdateSABSTransactionResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetCustomerDetailsFromDebitCardResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="PersonDetails" nillable="true" type="q8:PersonDetailsClass" xmlns:q8="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetCustomerDetailsFromDebitCardResponse" nillable="true" type="tns:ResponseMessageClass.GetCustomerDetailsFromDebitCardResponse"/>
+  <xsd:complexType name="ResponseMessageClass.GetDebitCardDetailsFromIdentityNoResponse">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="tns:ResponseMessageClass.ResponseHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CardList" nillable="true" type="q9:ArrayOfCardDetails_V2Class" xmlns:q9="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ResponseMessageClass.GetDebitCardDetailsFromIdentityNoResponse" nillable="true" type="tns:ResponseMessageClass.GetDebitCardDetailsFromIdentityNoResponse"/>
+</xsd:schema>

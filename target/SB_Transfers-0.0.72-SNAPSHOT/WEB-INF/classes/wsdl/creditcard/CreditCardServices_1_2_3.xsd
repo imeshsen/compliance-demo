@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects">
+  <xsd:complexType name="ArrayOfStatementDataClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="StatementDataClass" nillable="true" type="tns:StatementDataClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfStatementDataClass" nillable="true" type="tns:ArrayOfStatementDataClass"/>
+  <xsd:complexType name="StatementDataClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="billingdate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="closingbalance" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="duedate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="minimumdueamount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="openingbalance" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="statementserialno" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="totalcredits" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="totaldebits" type="xsd:decimal"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="StatementDataClass" nillable="true" type="tns:StatementDataClass"/>
+  <xsd:complexType name="ArrayOfCreditCardTransactionsClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="CreditCardTransactionsClass" nillable="true" type="tns:CreditCardTransactionsClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfCreditCardTransactionsClass" nillable="true" type="tns:ArrayOfCreditCardTransactionsClass"/>
+  <xsd:complexType name="CreditCardTransactionsClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="amount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="cardnumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="merchantcity" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="merchantname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="narration" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="orginaltransactionamount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="orginaltransactioncurrency" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="orginaltransactioncurrencycode" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="postdate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="statementserialno" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="transactiondate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="transactionpartitionkey" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="transactionserialno" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreditCardTransactionsClass" nillable="true" type="tns:CreditCardTransactionsClass"/>
+  <xsd:complexType name="ArrayOfCardDetailsClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="CardDetailsClass" nillable="true" type="tns:CardDetailsClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfCardDetailsClass" nillable="true" type="tns:ArrayOfCardDetailsClass"/>
+  <xsd:complexType name="CardDetailsClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="accountbalance" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="accountserialno" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="cardavailablebalance" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="cardembossingname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="cardnumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="cardserialno" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="cardstatus" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="creditlimit" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="peoplefirstname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplelastname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplemidname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="primarycard" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CardDetailsClass" nillable="true" type="tns:CardDetailsClass"/>
+  <xsd:complexType name="ArrayOfCardDetails_V2Class">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="CardDetails_V2Class" nillable="true" type="tns:CardDetails_V2Class"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfCardDetails_V2Class" nillable="true" type="tns:ArrayOfCardDetails_V2Class"/>
+  <xsd:complexType name="CardDetails_V2Class">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="accountbalance" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="accountserialno" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="cardavailablebalance" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="cardembossingname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="cardnumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="cardserialno" type="xsd:long"/>
+      <xsd:element minOccurs="0" name="cardstatus" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="creditlimit" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="cvv" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="expDate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="expDateStatus" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="idenNo" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="idenType" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplefirstname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplelastname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplemidname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="primarycard" type="xsd:int"/>
+      <xsd:element minOccurs="0" name="productCode" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="productName" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CardDetails_V2Class" nillable="true" type="tns:CardDetails_V2Class"/>
+  <xsd:complexType name="ArrayOfCreditCardOnlineTransactionsClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="CreditCardOnlineTransactionsClass" nillable="true" type="tns:CreditCardOnlineTransactionsClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfCreditCardOnlineTransactionsClass" nillable="true" type="tns:ArrayOfCreditCardOnlineTransactionsClass"/>
+  <xsd:complexType name="CreditCardOnlineTransactionsClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="amount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="merchantcity" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="merchantname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="orginaltransactionamount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="orginaltransactioncurrency" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="orginaltransactioncurrencycode" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="transactiondate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="transactionserialno" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreditCardOnlineTransactionsClass" nillable="true" type="tns:CreditCardOnlineTransactionsClass"/>
+  <xsd:complexType name="PersonDetailsClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Address1" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address4" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address5" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="BankCode" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="DOB" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="Designation" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="DrivingLicence" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Employer" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Passport" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Resident" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Sex" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="cardnumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplefirstname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplelastname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="peoplemidname" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PersonDetailsClass" nillable="true" type="tns:PersonDetailsClass"/>
+  <xsd:complexType name="PersonClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Address" nillable="true" type="tns:AddressClass"/>
+      <xsd:element minOccurs="0" name="Department" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Dob" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="Embname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Fname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Gender" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Lname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="MaritalStatus" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Mname" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Organization" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Position" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Resident" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PersonClass" nillable="true" type="tns:PersonClass"/>
+  <xsd:complexType name="AddressClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Address01" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address02" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address03" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address04" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Address05" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Location" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SerNo" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ZipCode" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AddressClass" nillable="true" type="tns:AddressClass"/>
+  <xsd:complexType name="ArrayOfAddressClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AddressClass" nillable="true" type="tns:AddressClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfAddressClass" nillable="true" type="tns:ArrayOfAddressClass"/>
+  <xsd:complexType name="ArrayOfPersonClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="PersonClass" nillable="true" type="tns:PersonClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfPersonClass" nillable="true" type="tns:ArrayOfPersonClass"/>
+  <xsd:complexType name="ArrayOfAdditionalDocumentClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="AdditionalDocumentClass" nillable="true" type="tns:AdditionalDocumentClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfAdditionalDocumentClass" nillable="true" type="tns:ArrayOfAdditionalDocumentClass"/>
+  <xsd:complexType name="AdditionalDocumentClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SerNo" type="xsd:decimal"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AdditionalDocumentClass" nillable="true" type="tns:AdditionalDocumentClass"/>
+  <xsd:complexType name="ArrayOfCreditCardPaymentTransactionsClass">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="CreditCardPaymentTransactionsClass" nillable="true" type="tns:CreditCardPaymentTransactionsClass"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ArrayOfCreditCardPaymentTransactionsClass" nillable="true" type="tns:ArrayOfCreditCardPaymentTransactionsClass"/>
+  <xsd:complexType name="CreditCardPaymentTransactionsClass">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="amount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="cardnumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="currancy" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="postdate" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="tran_amount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="transactiondate" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CreditCardPaymentTransactionsClass" nillable="true" type="tns:CreditCardPaymentTransactionsClass"/>
+</xsd:schema>

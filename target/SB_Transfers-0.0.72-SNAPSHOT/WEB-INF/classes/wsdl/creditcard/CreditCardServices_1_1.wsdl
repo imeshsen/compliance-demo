@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CreditCardServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_IDebitCardServices" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_ICreditCardApplications" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_IDialogServices" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_IMITServices" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_ICapexServices" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_IServices" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_ISABSServices" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_ICreditCardRewards" originalBindingStyle="document"/>
+        <binding hasEncoding="false" imported="true" name="BasicHttpBinding_ICreditCards" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" schemaLocation="CreditCardServices.xsd"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" schemaLocation="CreditCardServices_1_2_3_4_5_6.xsd"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects" schemaLocation="CreditCardServices_1.xsd"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon" schemaLocation="CreditCardServices_1_2.xsd"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects" schemaLocation="CreditCardServices_1_2_3.xsd"/>
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant" schemaLocation="CreditCardServices_1_2_3_4.xsd"/>
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="CreditCardServices_1_2_3_4_5.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServices_TestService_InputMessage">
+    <wsdl:part element="tns:TestService" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IServices_TestService_OutputMessage">
+    <wsdl:part element="tns:TestServiceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetMissedCallBalanceMessage_InputMessage">
+    <wsdl:part element="tns:GetMissedCallBalanceMessage" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetMissedCallBalanceMessage_OutputMessage">
+    <wsdl:part element="tns:GetMissedCallBalanceMessageResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardOTB_InputMessage">
+    <wsdl:part element="tns:GetCardOTB" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardOTB_OutputMessage">
+    <wsdl:part element="tns:GetCardOTBResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatements_InputMessage">
+    <wsdl:part element="tns:GetCardAccountStatements" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatements_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountStatementsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatements_V2_InputMessage">
+    <wsdl:part element="tns:GetCardAccountStatements_V2" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatements_V2_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountStatements_V2Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountInstallments_InputMessage">
+    <wsdl:part element="tns:GetCardAccountInstallments" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountInstallments_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountInstallmentsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountLastStatement_InputMessage">
+    <wsdl:part element="tns:GetCardAccountLastStatement" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountLastStatement_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountLastStatementResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountLast12MonthsStats_InputMessage">
+    <wsdl:part element="tns:GetCardAccountLast12MonthsStats" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountLast12MonthsStats_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountLast12MonthsStatsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatementTransactions_InputMessage">
+    <wsdl:part element="tns:GetCardAccountStatementTransactions" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatementTransactions_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountStatementTransactionsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatementTransactions_V2_InputMessage">
+    <wsdl:part element="tns:GetCardAccountStatementTransactions_V2" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountStatementTransactions_V2_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountStatementTransactions_V2Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromNIC_InputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromNIC" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromNIC_OutputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromNICResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromNIC_V2_InputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromNIC_V2" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromNIC_V2_OutputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromNIC_V2Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromNIC_V3_InputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromNIC_V3" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromNIC_V3_OutputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromNIC_V3Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromCardNumber_InputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromCardNumber" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromCardNumber_OutputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromCardNumberResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromCardNumber_V2_InputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromCardNumber_V2" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromCardNumber_V2_OutputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromCardNumber_V2Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountUnbilledTransactions_InputMessage">
+    <wsdl:part element="tns:GetCardAccountUnbilledTransactions" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardAccountUnbilledTransactions_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountUnbilledTransactionsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardPendingTransactions_InputMessage">
+    <wsdl:part element="tns:GetCardPendingTransactions" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardPendingTransactions_OutputMessage">
+    <wsdl:part element="tns:GetCardPendingTransactionsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_validateCardNumber_InputMessage">
+    <wsdl:part element="tns:validateCardNumber" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_validateCardNumber_OutputMessage">
+    <wsdl:part element="tns:validateCardNumberResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateCardNumber_V2_InputMessage">
+    <wsdl:part element="tns:ValidateCardNumber_V2" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateCardNumber_V2_OutputMessage">
+    <wsdl:part element="tns:ValidateCardNumber_V2Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateAccountNumber_InputMessage">
+    <wsdl:part element="tns:ValidateAccountNumber" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateAccountNumber_OutputMessage">
+    <wsdl:part element="tns:ValidateAccountNumberResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateCustomerNumber_InputMessage">
+    <wsdl:part element="tns:ValidateCustomerNumber" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateCustomerNumber_OutputMessage">
+    <wsdl:part element="tns:ValidateCustomerNumberResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateOTP_InputMessage">
+    <wsdl:part element="tns:ValidateOTP" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ValidateOTP_OutputMessage">
+    <wsdl:part element="tns:ValidateOTPResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_SendOTP_InputMessage">
+    <wsdl:part element="tns:SendOTP" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_SendOTP_OutputMessage">
+    <wsdl:part element="tns:SendOTPResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_PaymentCard_InputMessage">
+    <wsdl:part element="tns:PaymentCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_PaymentCard_OutputMessage">
+    <wsdl:part element="tns:PaymentCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_DisputeTransaction_InputMessage">
+    <wsdl:part element="tns:DisputeTransaction" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_DisputeTransaction_OutputMessage">
+    <wsdl:part element="tns:DisputeTransactionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ReIssueCardPIN_InputMessage">
+    <wsdl:part element="tns:ReIssueCardPIN" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ReIssueCardPIN_OutputMessage">
+    <wsdl:part element="tns:ReIssueCardPINResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_AtivateCard_InputMessage">
+    <wsdl:part element="tns:AtivateCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_AtivateCard_OutputMessage">
+    <wsdl:part element="tns:AtivateCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_BlockCard_InputMessage">
+    <wsdl:part element="tns:BlockCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_BlockCard_OutputMessage">
+    <wsdl:part element="tns:BlockCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_LostCard_InputMessage">
+    <wsdl:part element="tns:LostCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_LostCard_OutputMessage">
+    <wsdl:part element="tns:LostCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateCardSMSAleart_InputMessage">
+    <wsdl:part element="tns:UpdateCardSMSAleart" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateCardSMSAleart_OutputMessage">
+    <wsdl:part element="tns:UpdateCardSMSAleartResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateCardOTPEmail_InputMessage">
+    <wsdl:part element="tns:UpdateCardOTPEmail" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateCardOTPEmail_OutputMessage">
+    <wsdl:part element="tns:UpdateCardOTPEmailResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateeStatementEmail_InputMessage">
+    <wsdl:part element="tns:UpdateeStatementEmail" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateeStatementEmail_OutputMessage">
+    <wsdl:part element="tns:UpdateeStatementEmailResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateAccountEstatementEmail_InputMessage">
+    <wsdl:part element="tns:UpdateAccountEstatementEmail" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_UpdateAccountEstatementEmail_OutputMessage">
+    <wsdl:part element="tns:UpdateAccountEstatementEmailResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_CardReplacementRequest_InputMessage">
+    <wsdl:part element="tns:CardReplacementRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_CardReplacementRequest_OutputMessage">
+    <wsdl:part element="tns:CardReplacementRequestResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_PrintCardStatement_InputMessage">
+    <wsdl:part element="tns:PrintCardStatement" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_PrintCardStatement_OutputMessage">
+    <wsdl:part element="tns:PrintCardStatementResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_RequestSupplementaryCard_InputMessage">
+    <wsdl:part element="tns:RequestSupplementaryCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_RequestSupplementaryCard_OutputMessage">
+    <wsdl:part element="tns:RequestSupplementaryCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ChangeStatementDate_InputMessage">
+    <wsdl:part element="tns:ChangeStatementDate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ChangeStatementDate_OutputMessage">
+    <wsdl:part element="tns:ChangeStatementDateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_FindCard_InputMessage">
+    <wsdl:part element="tns:FindCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_FindCard_OutputMessage">
+    <wsdl:part element="tns:FindCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardSerial_InputMessage">
+    <wsdl:part element="tns:GetCardSerial" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardSerial_OutputMessage">
+    <wsdl:part element="tns:GetCardSerialResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardNumberFromSerial_InputMessage">
+    <wsdl:part element="tns:GetCardNumberFromSerial" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardNumberFromSerial_OutputMessage">
+    <wsdl:part element="tns:GetCardNumberFromSerialResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetBranchDetails_InputMessage">
+    <wsdl:part element="tns:GetBranchDetails" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetBranchDetails_OutputMessage">
+    <wsdl:part element="tns:GetBranchDetailsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_TemporaryBlockCard_InputMessage">
+    <wsdl:part element="tns:TemporaryBlockCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_TemporaryBlockCard_OutputMessage">
+    <wsdl:part element="tns:TemporaryBlockCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_TemporaryUnblockCard_InputMessage">
+    <wsdl:part element="tns:TemporaryUnblockCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_TemporaryUnblockCard_OutputMessage">
+    <wsdl:part element="tns:TemporaryUnblockCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCustomerDetailsFromNic_InputMessage">
+    <wsdl:part element="tns:GetCustomerDetailsFromNic" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCustomerDetailsFromNic_OutputMessage">
+    <wsdl:part element="tns:GetCustomerDetailsFromNicResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromIdentityNo_InputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromIdentityNo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_GetCardDetailsFromIdentityNo_OutputMessage">
+    <wsdl:part element="tns:GetCardDetailsFromIdentityNoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ApplyWebCard_InputMessage">
+    <wsdl:part element="tns:ApplyWebCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ApplyWebCard_OutputMessage">
+    <wsdl:part element="tns:ApplyWebCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ApplySupplymentryCard_InputMessage">
+    <wsdl:part element="tns:ApplySupplymentryCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ApplySupplymentryCard_OutputMessage">
+    <wsdl:part element="tns:ApplySupplymentryCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_CardUpgrade_InputMessage">
+    <wsdl:part element="tns:CardUpgrade" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_CardUpgrade_OutputMessage">
+    <wsdl:part element="tns:CardUpgradeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ActivateLifeInsurance_InputMessage">
+    <wsdl:part element="tns:ActivateLifeInsurance" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCards_ActivateLifeInsurance_OutputMessage">
+    <wsdl:part element="tns:ActivateLifeInsuranceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_GetApplicationStatus_InputMessage">
+    <wsdl:part element="tns:GetApplicationStatus" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_GetApplicationStatus_OutputMessage">
+    <wsdl:part element="tns:GetApplicationStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_GetCardApplicationDetailsfromNIC_InputMessage">
+    <wsdl:part element="tns:GetCardApplicationDetailsfromNIC" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_GetCardApplicationDetailsfromNIC_OutputMessage">
+    <wsdl:part element="tns:GetCardApplicationDetailsfromNICResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_AddCardApplication_InputMessage">
+    <wsdl:part element="tns:AddCardApplication" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_AddCardApplication_OutputMessage">
+    <wsdl:part element="tns:AddCardApplicationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_UpdateCardApplicationStatus_InputMessage">
+    <wsdl:part element="tns:UpdateCardApplicationStatus" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardApplications_UpdateCardApplicationStatus_OutputMessage">
+    <wsdl:part element="tns:UpdateCardApplicationStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardRewards_GetPointsBalance_InputMessage">
+    <wsdl:part element="tns:GetPointsBalance" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardRewards_GetPointsBalance_OutputMessage">
+    <wsdl:part element="tns:GetPointsBalanceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardRewards_RedeemPointsUsingCard_InputMessage">
+    <wsdl:part element="tns:RedeemPointsUsingCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardRewards_RedeemPointsUsingCard_OutputMessage">
+    <wsdl:part element="tns:RedeemPointsUsingCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardRewards_GetExpiredPoints_InputMessage">
+    <wsdl:part element="tns:GetExpiredPoints" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICreditCardRewards_GetExpiredPoints_OutputMessage">
+    <wsdl:part element="tns:GetExpiredPointsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IMITServices_GetCardAccountLast12MonthsSummaryforMIT_InputMessage">
+    <wsdl:part element="tns:GetCardAccountLast12MonthsSummaryforMIT" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IMITServices_GetCardAccountLast12MonthsSummaryforMIT_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountLast12MonthsSummaryforMITResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IMITServices_GetCardAccountInstallmentSummaryforMIT_InputMessage">
+    <wsdl:part element="tns:GetCardAccountInstallmentSummaryforMIT" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IMITServices_GetCardAccountInstallmentSummaryforMIT_OutputMessage">
+    <wsdl:part element="tns:GetCardAccountInstallmentSummaryforMITResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDialogServices_RegisterGenieMerchantRegistration_InputMessage">
+    <wsdl:part element="tns:RegisterGenieMerchantRegistration" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDialogServices_RegisterGenieMerchantRegistration_OutputMessage">
+    <wsdl:part element="tns:RegisterGenieMerchantRegistrationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDialogServices_UpdateGenieTransactions_InputMessage">
+    <wsdl:part element="tns:UpdateGenieTransactions" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDialogServices_UpdateGenieTransactions_OutputMessage">
+    <wsdl:part element="tns:UpdateGenieTransactionsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDialogServices_UpdateGenieMerchantStatus_InputMessage">
+    <wsdl:part element="tns:UpdateGenieMerchantStatus" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDialogServices_UpdateGenieMerchantStatus_OutputMessage">
+    <wsdl:part element="tns:UpdateGenieMerchantStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ReturnFile_InputMessage">
+    <wsdl:part element="tns:ReturnFile" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ReturnFile_OutputMessage">
+    <wsdl:part element="tns:ReturnFileResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestBalanceTransfer_InputMessage">
+    <wsdl:part element="tns:RequestBalanceTransfer" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestBalanceTransfer_OutputMessage">
+    <wsdl:part element="tns:RequestBalanceTransferResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestInstallmentAcceleration_InputMessage">
+    <wsdl:part element="tns:RequestInstallmentAcceleration" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestInstallmentAcceleration_OutputMessage">
+    <wsdl:part element="tns:RequestInstallmentAccelerationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestConvertTansactionToInstallment_InputMessage">
+    <wsdl:part element="tns:RequestConvertTansactionToInstallment" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestConvertTansactionToInstallment_OutputMessage">
+    <wsdl:part element="tns:RequestConvertTansactionToInstallmentResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequesteStatement_InputMessage">
+    <wsdl:part element="tns:RequesteStatement" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequesteStatement_OutputMessage">
+    <wsdl:part element="tns:RequesteStatementResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestForLetters_InputMessage">
+    <wsdl:part element="tns:RequestForLetters" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestForLetters_OutputMessage">
+    <wsdl:part element="tns:RequestForLettersResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ChangeSingleTranLimit_InputMessage">
+    <wsdl:part element="tns:ChangeSingleTranLimit" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ChangeSingleTranLimit_OutputMessage">
+    <wsdl:part element="tns:ChangeSingleTranLimitResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestAddress_InputMessage">
+    <wsdl:part element="tns:RequestAddress" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestAddress_OutputMessage">
+    <wsdl:part element="tns:RequestAddressResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ChangeAddress_InputMessage">
+    <wsdl:part element="tns:ChangeAddress" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ChangeAddress_OutputMessage">
+    <wsdl:part element="tns:ChangeAddressResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ValidateCardCVC_InputMessage">
+    <wsdl:part element="tns:ValidateCardCVC" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_ValidateCardCVC_OutputMessage">
+    <wsdl:part element="tns:ValidateCardCVCResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_GetCardCVC_InputMessage">
+    <wsdl:part element="tns:GetCardCVC" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_GetCardCVC_OutputMessage">
+    <wsdl:part element="tns:GetCardCVCResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_AddChangeAutopayDetails_InputMessage">
+    <wsdl:part element="tns:AddChangeAutopayDetails" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_AddChangeAutopayDetails_OutputMessage">
+    <wsdl:part element="tns:AddChangeAutopayDetailsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_AddChangeAccountAutopayDetails_InputMessage">
+    <wsdl:part element="tns:AddChangeAccountAutopayDetails" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_AddChangeAccountAutopayDetails_OutputMessage">
+    <wsdl:part element="tns:AddChangeAccountAutopayDetailsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_TravelInsuranceRequest_InputMessage">
+    <wsdl:part element="tns:TravelInsuranceRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_TravelInsuranceRequest_OutputMessage">
+    <wsdl:part element="tns:TravelInsuranceRequestResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_TravelInsuranceClaim_InputMessage">
+    <wsdl:part element="tns:TravelInsuranceClaim" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_TravelInsuranceClaim_OutputMessage">
+    <wsdl:part element="tns:TravelInsuranceClaimResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_UpdateTravellingAbroad_InputMessage">
+    <wsdl:part element="tns:UpdateTravellingAbroad" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_UpdateTravellingAbroad_OutputMessage">
+    <wsdl:part element="tns:UpdateTravellingAbroadResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_SendAdditionalDocumentRequests_InputMessage">
+    <wsdl:part element="tns:SendAdditionalDocumentRequests" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_SendAdditionalDocumentRequests_OutputMessage">
+    <wsdl:part element="tns:SendAdditionalDocumentRequestsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_GetCardPaymentTransactions_InputMessage">
+    <wsdl:part element="tns:GetCardPaymentTransactions" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_GetCardPaymentTransactions_OutputMessage">
+    <wsdl:part element="tns:GetCardPaymentTransactionsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestLimitEnhancement_InputMessage">
+    <wsdl:part element="tns:RequestLimitEnhancement" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestLimitEnhancement_OutputMessage">
+    <wsdl:part element="tns:RequestLimitEnhancementResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestToReleaseFD_InputMessage">
+    <wsdl:part element="tns:RequestToReleaseFD" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestToReleaseFD_OutputMessage">
+    <wsdl:part element="tns:RequestToReleaseFDResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestToLinkAccounts_InputMessage">
+    <wsdl:part element="tns:RequestToLinkAccounts" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ICapexServices_RequestToLinkAccounts_OutputMessage">
+    <wsdl:part element="tns:RequestToLinkAccountsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_ValidateSABSFacility_InputMessage">
+    <wsdl:part element="tns:ValidateSABSFacility" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_ValidateSABSFacility_OutputMessage">
+    <wsdl:part element="tns:ValidateSABSFacilityResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_UpdateSABSFacility_InputMessage">
+    <wsdl:part element="tns:UpdateSABSFacility" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_UpdateSABSFacility_OutputMessage">
+    <wsdl:part element="tns:UpdateSABSFacilityResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_CancelSABSFacility_InputMessage">
+    <wsdl:part element="tns:CancelSABSFacility" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_CancelSABSFacility_OutputMessage">
+    <wsdl:part element="tns:CancelSABSFacilityResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_UpdateSABSTransaction_InputMessage">
+    <wsdl:part element="tns:UpdateSABSTransaction" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ISABSServices_UpdateSABSTransaction_OutputMessage">
+    <wsdl:part element="tns:UpdateSABSTransactionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDebitCardServices_GetCustomerDetailsFromDebitCard_InputMessage">
+    <wsdl:part element="tns:GetCustomerDetailsFromDebitCard" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDebitCardServices_GetCustomerDetailsFromDebitCard_OutputMessage">
+    <wsdl:part element="tns:GetCustomerDetailsFromDebitCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDebitCardServices_GetDebitCardDetailsFromIdentityNo_InputMessage">
+    <wsdl:part element="tns:GetDebitCardDetailsFromIdentityNo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IDebitCardServices_GetDebitCardDetailsFromIdentityNo_OutputMessage">
+    <wsdl:part element="tns:GetDebitCardDetailsFromIdentityNoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="IServices">
+    <wsdl:operation name="TestService">
+      <wsdl:input message="tns:IServices_TestService_InputMessage" wsaw:Action="http://tempuri.org/IServices/TestService"/>
+      <wsdl:output message="tns:IServices_TestService_OutputMessage" wsaw:Action="http://tempuri.org/IServices/TestServiceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICreditCards">
+    <wsdl:operation name="GetMissedCallBalanceMessage">
+      <wsdl:input message="tns:ICreditCards_GetMissedCallBalanceMessage_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetMissedCallBalanceMessage"/>
+      <wsdl:output message="tns:ICreditCards_GetMissedCallBalanceMessage_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetMissedCallBalanceMessageResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardOTB">
+      <wsdl:input message="tns:ICreditCards_GetCardOTB_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardOTB"/>
+      <wsdl:output message="tns:ICreditCards_GetCardOTB_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardOTBResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatements">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountStatements_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatements"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountStatements_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatementsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatements_V2">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountStatements_V2_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatements_V2"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountStatements_V2_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatements_V2Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountInstallments">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountInstallments_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountInstallments"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountInstallments_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountInstallmentsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountLastStatement">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountLastStatement_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountLastStatement"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountLastStatement_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountLastStatementResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountLast12MonthsStats">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountLast12MonthsStats_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountLast12MonthsStats"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountLast12MonthsStats_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountLast12MonthsStatsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatementTransactions">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountStatementTransactions_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatementTransactions"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountStatementTransactions_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatementTransactionsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatementTransactions_V2">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountStatementTransactions_V2_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatementTransactions_V2"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountStatementTransactions_V2_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountStatementTransactions_V2Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromNIC">
+      <wsdl:input message="tns:ICreditCards_GetCardDetailsFromNIC_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC"/>
+      <wsdl:output message="tns:ICreditCards_GetCardDetailsFromNIC_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromNICResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromNIC_V2">
+      <wsdl:input message="tns:ICreditCards_GetCardDetailsFromNIC_V2_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC_V2"/>
+      <wsdl:output message="tns:ICreditCards_GetCardDetailsFromNIC_V2_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC_V2Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromNIC_V3">
+      <wsdl:input message="tns:ICreditCards_GetCardDetailsFromNIC_V3_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC_V3"/>
+      <wsdl:output message="tns:ICreditCards_GetCardDetailsFromNIC_V3_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC_V3Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromCardNumber">
+      <wsdl:input message="tns:ICreditCards_GetCardDetailsFromCardNumber_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromCardNumber"/>
+      <wsdl:output message="tns:ICreditCards_GetCardDetailsFromCardNumber_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromCardNumberResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromCardNumber_V2">
+      <wsdl:input message="tns:ICreditCards_GetCardDetailsFromCardNumber_V2_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromCardNumber_V2"/>
+      <wsdl:output message="tns:ICreditCards_GetCardDetailsFromCardNumber_V2_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromCardNumber_V2Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountUnbilledTransactions">
+      <wsdl:input message="tns:ICreditCards_GetCardAccountUnbilledTransactions_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountUnbilledTransactions"/>
+      <wsdl:output message="tns:ICreditCards_GetCardAccountUnbilledTransactions_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardAccountUnbilledTransactionsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPendingTransactions">
+      <wsdl:input message="tns:ICreditCards_GetCardPendingTransactions_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardPendingTransactions"/>
+      <wsdl:output message="tns:ICreditCards_GetCardPendingTransactions_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardPendingTransactionsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="validateCardNumber">
+      <wsdl:input message="tns:ICreditCards_validateCardNumber_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/validateCardNumber"/>
+      <wsdl:output message="tns:ICreditCards_validateCardNumber_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/validateCardNumberResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardNumber_V2">
+      <wsdl:input message="tns:ICreditCards_ValidateCardNumber_V2_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateCardNumber_V2"/>
+      <wsdl:output message="tns:ICreditCards_ValidateCardNumber_V2_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateCardNumber_V2Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccountNumber">
+      <wsdl:input message="tns:ICreditCards_ValidateAccountNumber_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateAccountNumber"/>
+      <wsdl:output message="tns:ICreditCards_ValidateAccountNumber_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateAccountNumberResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomerNumber">
+      <wsdl:input message="tns:ICreditCards_ValidateCustomerNumber_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateCustomerNumber"/>
+      <wsdl:output message="tns:ICreditCards_ValidateCustomerNumber_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateCustomerNumberResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOTP">
+      <wsdl:input message="tns:ICreditCards_ValidateOTP_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateOTP"/>
+      <wsdl:output message="tns:ICreditCards_ValidateOTP_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ValidateOTPResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <wsdl:input message="tns:ICreditCards_SendOTP_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/SendOTP"/>
+      <wsdl:output message="tns:ICreditCards_SendOTP_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/SendOTPResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCard">
+      <wsdl:input message="tns:ICreditCards_PaymentCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/PaymentCard"/>
+      <wsdl:output message="tns:ICreditCards_PaymentCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/PaymentCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DisputeTransaction">
+      <wsdl:input message="tns:ICreditCards_DisputeTransaction_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/DisputeTransaction"/>
+      <wsdl:output message="tns:ICreditCards_DisputeTransaction_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/DisputeTransactionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReIssueCardPIN">
+      <wsdl:input message="tns:ICreditCards_ReIssueCardPIN_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ReIssueCardPIN"/>
+      <wsdl:output message="tns:ICreditCards_ReIssueCardPIN_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ReIssueCardPINResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AtivateCard">
+      <wsdl:input message="tns:ICreditCards_AtivateCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/AtivateCard"/>
+      <wsdl:output message="tns:ICreditCards_AtivateCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/AtivateCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <wsdl:input message="tns:ICreditCards_BlockCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/BlockCard"/>
+      <wsdl:output message="tns:ICreditCards_BlockCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/BlockCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="LostCard">
+      <wsdl:input message="tns:ICreditCards_LostCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/LostCard"/>
+      <wsdl:output message="tns:ICreditCards_LostCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/LostCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardSMSAleart">
+      <wsdl:input message="tns:ICreditCards_UpdateCardSMSAleart_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateCardSMSAleart"/>
+      <wsdl:output message="tns:ICreditCards_UpdateCardSMSAleart_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateCardSMSAleartResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardOTPEmail">
+      <wsdl:input message="tns:ICreditCards_UpdateCardOTPEmail_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateCardOTPEmail"/>
+      <wsdl:output message="tns:ICreditCards_UpdateCardOTPEmail_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateCardOTPEmailResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateeStatementEmail">
+      <wsdl:input message="tns:ICreditCards_UpdateeStatementEmail_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateeStatementEmail"/>
+      <wsdl:output message="tns:ICreditCards_UpdateeStatementEmail_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateeStatementEmailResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountEstatementEmail">
+      <wsdl:input message="tns:ICreditCards_UpdateAccountEstatementEmail_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateAccountEstatementEmail"/>
+      <wsdl:output message="tns:ICreditCards_UpdateAccountEstatementEmail_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/UpdateAccountEstatementEmailResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CardReplacementRequest">
+      <wsdl:input message="tns:ICreditCards_CardReplacementRequest_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/CardReplacementRequest"/>
+      <wsdl:output message="tns:ICreditCards_CardReplacementRequest_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/CardReplacementRequestResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="PrintCardStatement">
+      <wsdl:input message="tns:ICreditCards_PrintCardStatement_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/PrintCardStatement"/>
+      <wsdl:output message="tns:ICreditCards_PrintCardStatement_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/PrintCardStatementResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestSupplementaryCard">
+      <wsdl:input message="tns:ICreditCards_RequestSupplementaryCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/RequestSupplementaryCard"/>
+      <wsdl:output message="tns:ICreditCards_RequestSupplementaryCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/RequestSupplementaryCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatementDate">
+      <wsdl:input message="tns:ICreditCards_ChangeStatementDate_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ChangeStatementDate"/>
+      <wsdl:output message="tns:ICreditCards_ChangeStatementDate_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ChangeStatementDateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="FindCard">
+      <wsdl:input message="tns:ICreditCards_FindCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/FindCard"/>
+      <wsdl:output message="tns:ICreditCards_FindCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/FindCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSerial">
+      <wsdl:input message="tns:ICreditCards_GetCardSerial_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardSerial"/>
+      <wsdl:output message="tns:ICreditCards_GetCardSerial_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardSerialResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardNumberFromSerial">
+      <wsdl:input message="tns:ICreditCards_GetCardNumberFromSerial_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardNumberFromSerial"/>
+      <wsdl:output message="tns:ICreditCards_GetCardNumberFromSerial_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardNumberFromSerialResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchDetails">
+      <wsdl:input message="tns:ICreditCards_GetBranchDetails_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetBranchDetails"/>
+      <wsdl:output message="tns:ICreditCards_GetBranchDetails_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetBranchDetailsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryBlockCard">
+      <wsdl:input message="tns:ICreditCards_TemporaryBlockCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/TemporaryBlockCard"/>
+      <wsdl:output message="tns:ICreditCards_TemporaryBlockCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/TemporaryBlockCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryUnblockCard">
+      <wsdl:input message="tns:ICreditCards_TemporaryUnblockCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/TemporaryUnblockCard"/>
+      <wsdl:output message="tns:ICreditCards_TemporaryUnblockCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/TemporaryUnblockCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetailsFromNic">
+      <wsdl:input message="tns:ICreditCards_GetCustomerDetailsFromNic_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCustomerDetailsFromNic"/>
+      <wsdl:output message="tns:ICreditCards_GetCustomerDetailsFromNic_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCustomerDetailsFromNicResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromIdentityNo">
+      <wsdl:input message="tns:ICreditCards_GetCardDetailsFromIdentityNo_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromIdentityNo"/>
+      <wsdl:output message="tns:ICreditCards_GetCardDetailsFromIdentityNo_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/GetCardDetailsFromIdentityNoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyWebCard">
+      <wsdl:input message="tns:ICreditCards_ApplyWebCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ApplyWebCard"/>
+      <wsdl:output message="tns:ICreditCards_ApplyWebCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ApplyWebCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ApplySupplymentryCard">
+      <wsdl:input message="tns:ICreditCards_ApplySupplymentryCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ApplySupplymentryCard"/>
+      <wsdl:output message="tns:ICreditCards_ApplySupplymentryCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ApplySupplymentryCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CardUpgrade">
+      <wsdl:input message="tns:ICreditCards_CardUpgrade_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/CardUpgrade"/>
+      <wsdl:output message="tns:ICreditCards_CardUpgrade_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/CardUpgradeResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateLifeInsurance">
+      <wsdl:input message="tns:ICreditCards_ActivateLifeInsurance_InputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ActivateLifeInsurance"/>
+      <wsdl:output message="tns:ICreditCards_ActivateLifeInsurance_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCards/ActivateLifeInsuranceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICreditCardApplications">
+    <wsdl:operation name="GetApplicationStatus">
+      <wsdl:input message="tns:ICreditCardApplications_GetApplicationStatus_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/GetApplicationStatus"/>
+      <wsdl:output message="tns:ICreditCardApplications_GetApplicationStatus_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/GetApplicationStatusResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardApplicationDetailsfromNIC">
+      <wsdl:input message="tns:ICreditCardApplications_GetCardApplicationDetailsfromNIC_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/GetCardApplicationDetailsfromNIC"/>
+      <wsdl:output message="tns:ICreditCardApplications_GetCardApplicationDetailsfromNIC_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/GetCardApplicationDetailsfromNICResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddCardApplication">
+      <wsdl:input message="tns:ICreditCardApplications_AddCardApplication_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/AddCardApplication"/>
+      <wsdl:output message="tns:ICreditCardApplications_AddCardApplication_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/AddCardApplicationResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardApplicationStatus">
+      <wsdl:input message="tns:ICreditCardApplications_UpdateCardApplicationStatus_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/UpdateCardApplicationStatus"/>
+      <wsdl:output message="tns:ICreditCardApplications_UpdateCardApplicationStatus_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardApplications/UpdateCardApplicationStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICreditCardRewards">
+    <wsdl:operation name="GetPointsBalance">
+      <wsdl:input message="tns:ICreditCardRewards_GetPointsBalance_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardRewards/GetPointsBalance"/>
+      <wsdl:output message="tns:ICreditCardRewards_GetPointsBalance_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardRewards/GetPointsBalanceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPointsUsingCard">
+      <wsdl:input message="tns:ICreditCardRewards_RedeemPointsUsingCard_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardRewards/RedeemPointsUsingCard"/>
+      <wsdl:output message="tns:ICreditCardRewards_RedeemPointsUsingCard_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardRewards/RedeemPointsUsingCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredPoints">
+      <wsdl:input message="tns:ICreditCardRewards_GetExpiredPoints_InputMessage" wsaw:Action="http://tempuri.org/ICreditCardRewards/GetExpiredPoints"/>
+      <wsdl:output message="tns:ICreditCardRewards_GetExpiredPoints_OutputMessage" wsaw:Action="http://tempuri.org/ICreditCardRewards/GetExpiredPointsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMITServices">
+    <wsdl:operation name="GetCardAccountLast12MonthsSummaryforMIT">
+      <wsdl:input message="tns:IMITServices_GetCardAccountLast12MonthsSummaryforMIT_InputMessage" wsaw:Action="http://tempuri.org/IMITServices/GetCardAccountLast12MonthsSummaryforMIT"/>
+      <wsdl:output message="tns:IMITServices_GetCardAccountLast12MonthsSummaryforMIT_OutputMessage" wsaw:Action="http://tempuri.org/IMITServices/GetCardAccountLast12MonthsSummaryforMITResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountInstallmentSummaryforMIT">
+      <wsdl:input message="tns:IMITServices_GetCardAccountInstallmentSummaryforMIT_InputMessage" wsaw:Action="http://tempuri.org/IMITServices/GetCardAccountInstallmentSummaryforMIT"/>
+      <wsdl:output message="tns:IMITServices_GetCardAccountInstallmentSummaryforMIT_OutputMessage" wsaw:Action="http://tempuri.org/IMITServices/GetCardAccountInstallmentSummaryforMITResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDialogServices">
+    <wsdl:operation name="RegisterGenieMerchantRegistration">
+      <wsdl:input message="tns:IDialogServices_RegisterGenieMerchantRegistration_InputMessage" wsaw:Action="http://tempuri.org/IDialogServices/RegisterGenieMerchantRegistration"/>
+      <wsdl:output message="tns:IDialogServices_RegisterGenieMerchantRegistration_OutputMessage" wsaw:Action="http://tempuri.org/IDialogServices/RegisterGenieMerchantRegistrationResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenieTransactions">
+      <wsdl:input message="tns:IDialogServices_UpdateGenieTransactions_InputMessage" wsaw:Action="http://tempuri.org/IDialogServices/UpdateGenieTransactions"/>
+      <wsdl:output message="tns:IDialogServices_UpdateGenieTransactions_OutputMessage" wsaw:Action="http://tempuri.org/IDialogServices/UpdateGenieTransactionsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenieMerchantStatus">
+      <wsdl:input message="tns:IDialogServices_UpdateGenieMerchantStatus_InputMessage" wsaw:Action="http://tempuri.org/IDialogServices/UpdateGenieMerchantStatus"/>
+      <wsdl:output message="tns:IDialogServices_UpdateGenieMerchantStatus_OutputMessage" wsaw:Action="http://tempuri.org/IDialogServices/UpdateGenieMerchantStatusResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICapexServices">
+    <wsdl:operation name="ReturnFile">
+      <wsdl:input message="tns:ICapexServices_ReturnFile_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ReturnFile"/>
+      <wsdl:output message="tns:ICapexServices_ReturnFile_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ReturnFileResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestBalanceTransfer">
+      <wsdl:input message="tns:ICapexServices_RequestBalanceTransfer_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestBalanceTransfer"/>
+      <wsdl:output message="tns:ICapexServices_RequestBalanceTransfer_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestBalanceTransferResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestInstallmentAcceleration">
+      <wsdl:input message="tns:ICapexServices_RequestInstallmentAcceleration_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestInstallmentAcceleration"/>
+      <wsdl:output message="tns:ICapexServices_RequestInstallmentAcceleration_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestInstallmentAccelerationResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestConvertTansactionToInstallment">
+      <wsdl:input message="tns:ICapexServices_RequestConvertTansactionToInstallment_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestConvertTansactionToInstallment"/>
+      <wsdl:output message="tns:ICapexServices_RequestConvertTansactionToInstallment_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestConvertTansactionToInstallmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequesteStatement">
+      <wsdl:input message="tns:ICapexServices_RequesteStatement_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequesteStatement"/>
+      <wsdl:output message="tns:ICapexServices_RequesteStatement_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequesteStatementResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestForLetters">
+      <wsdl:input message="tns:ICapexServices_RequestForLetters_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestForLetters"/>
+      <wsdl:output message="tns:ICapexServices_RequestForLetters_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestForLettersResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSingleTranLimit">
+      <wsdl:input message="tns:ICapexServices_ChangeSingleTranLimit_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ChangeSingleTranLimit"/>
+      <wsdl:output message="tns:ICapexServices_ChangeSingleTranLimit_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ChangeSingleTranLimitResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAddress">
+      <wsdl:input message="tns:ICapexServices_RequestAddress_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestAddress"/>
+      <wsdl:output message="tns:ICapexServices_RequestAddress_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestAddressResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAddress">
+      <wsdl:input message="tns:ICapexServices_ChangeAddress_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ChangeAddress"/>
+      <wsdl:output message="tns:ICapexServices_ChangeAddress_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ChangeAddressResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardCVC">
+      <wsdl:input message="tns:ICapexServices_ValidateCardCVC_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ValidateCardCVC"/>
+      <wsdl:output message="tns:ICapexServices_ValidateCardCVC_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/ValidateCardCVCResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardCVC">
+      <wsdl:input message="tns:ICapexServices_GetCardCVC_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/GetCardCVC"/>
+      <wsdl:output message="tns:ICapexServices_GetCardCVC_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/GetCardCVCResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddChangeAutopayDetails">
+      <wsdl:input message="tns:ICapexServices_AddChangeAutopayDetails_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/AddChangeAutopayDetails"/>
+      <wsdl:output message="tns:ICapexServices_AddChangeAutopayDetails_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/AddChangeAutopayDetailsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddChangeAccountAutopayDetails">
+      <wsdl:input message="tns:ICapexServices_AddChangeAccountAutopayDetails_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/AddChangeAccountAutopayDetails"/>
+      <wsdl:output message="tns:ICapexServices_AddChangeAccountAutopayDetails_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/AddChangeAccountAutopayDetailsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TravelInsuranceRequest">
+      <wsdl:input message="tns:ICapexServices_TravelInsuranceRequest_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/TravelInsuranceRequest"/>
+      <wsdl:output message="tns:ICapexServices_TravelInsuranceRequest_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/TravelInsuranceRequestResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TravelInsuranceClaim">
+      <wsdl:input message="tns:ICapexServices_TravelInsuranceClaim_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/TravelInsuranceClaim"/>
+      <wsdl:output message="tns:ICapexServices_TravelInsuranceClaim_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/TravelInsuranceClaimResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTravellingAbroad">
+      <wsdl:input message="tns:ICapexServices_UpdateTravellingAbroad_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/UpdateTravellingAbroad"/>
+      <wsdl:output message="tns:ICapexServices_UpdateTravellingAbroad_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/UpdateTravellingAbroadResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendAdditionalDocumentRequests">
+      <wsdl:input message="tns:ICapexServices_SendAdditionalDocumentRequests_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/SendAdditionalDocumentRequests"/>
+      <wsdl:output message="tns:ICapexServices_SendAdditionalDocumentRequests_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/SendAdditionalDocumentRequestsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPaymentTransactions">
+      <wsdl:input message="tns:ICapexServices_GetCardPaymentTransactions_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/GetCardPaymentTransactions"/>
+      <wsdl:output message="tns:ICapexServices_GetCardPaymentTransactions_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/GetCardPaymentTransactionsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestLimitEnhancement">
+      <wsdl:input message="tns:ICapexServices_RequestLimitEnhancement_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestLimitEnhancement"/>
+      <wsdl:output message="tns:ICapexServices_RequestLimitEnhancement_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestLimitEnhancementResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToReleaseFD">
+      <wsdl:input message="tns:ICapexServices_RequestToReleaseFD_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestToReleaseFD"/>
+      <wsdl:output message="tns:ICapexServices_RequestToReleaseFD_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestToReleaseFDResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToLinkAccounts">
+      <wsdl:input message="tns:ICapexServices_RequestToLinkAccounts_InputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestToLinkAccounts"/>
+      <wsdl:output message="tns:ICapexServices_RequestToLinkAccounts_OutputMessage" wsaw:Action="http://tempuri.org/ICapexServices/RequestToLinkAccountsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISABSServices">
+    <wsdl:operation name="ValidateSABSFacility">
+      <wsdl:input message="tns:ISABSServices_ValidateSABSFacility_InputMessage" wsaw:Action="http://tempuri.org/ISABSServices/ValidateSABSFacility"/>
+      <wsdl:output message="tns:ISABSServices_ValidateSABSFacility_OutputMessage" wsaw:Action="http://tempuri.org/ISABSServices/ValidateSABSFacilityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSABSFacility">
+      <wsdl:input message="tns:ISABSServices_UpdateSABSFacility_InputMessage" wsaw:Action="http://tempuri.org/ISABSServices/UpdateSABSFacility"/>
+      <wsdl:output message="tns:ISABSServices_UpdateSABSFacility_OutputMessage" wsaw:Action="http://tempuri.org/ISABSServices/UpdateSABSFacilityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSABSFacility">
+      <wsdl:input message="tns:ISABSServices_CancelSABSFacility_InputMessage" wsaw:Action="http://tempuri.org/ISABSServices/CancelSABSFacility"/>
+      <wsdl:output message="tns:ISABSServices_CancelSABSFacility_OutputMessage" wsaw:Action="http://tempuri.org/ISABSServices/CancelSABSFacilityResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSABSTransaction">
+      <wsdl:input message="tns:ISABSServices_UpdateSABSTransaction_InputMessage" wsaw:Action="http://tempuri.org/ISABSServices/UpdateSABSTransaction"/>
+      <wsdl:output message="tns:ISABSServices_UpdateSABSTransaction_OutputMessage" wsaw:Action="http://tempuri.org/ISABSServices/UpdateSABSTransactionResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDebitCardServices">
+    <wsdl:operation name="GetCustomerDetailsFromDebitCard">
+      <wsdl:input message="tns:IDebitCardServices_GetCustomerDetailsFromDebitCard_InputMessage" wsaw:Action="http://tempuri.org/IDebitCardServices/GetCustomerDetailsFromDebitCard"/>
+      <wsdl:output message="tns:IDebitCardServices_GetCustomerDetailsFromDebitCard_OutputMessage" wsaw:Action="http://tempuri.org/IDebitCardServices/GetCustomerDetailsFromDebitCardResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebitCardDetailsFromIdentityNo">
+      <wsdl:input message="tns:IDebitCardServices_GetDebitCardDetailsFromIdentityNo_InputMessage" wsaw:Action="http://tempuri.org/IDebitCardServices/GetDebitCardDetailsFromIdentityNo"/>
+      <wsdl:output message="tns:IDebitCardServices_GetDebitCardDetailsFromIdentityNo_OutputMessage" wsaw:Action="http://tempuri.org/IDebitCardServices/GetDebitCardDetailsFromIdentityNoResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServices" type="tns:IServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="TestService">
+      <soap:operation soapAction="http://tempuri.org/IServices/TestService" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICreditCards" type="tns:ICreditCards">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetMissedCallBalanceMessage">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetMissedCallBalanceMessage" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardOTB">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardOTB" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatements">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountStatements" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatements_V2">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountStatements_V2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountInstallments">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountInstallments" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountLastStatement">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountLastStatement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountLast12MonthsStats">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountLast12MonthsStats" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatementTransactions">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountStatementTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountStatementTransactions_V2">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountStatementTransactions_V2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromNIC">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromNIC_V2">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC_V2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromNIC_V3">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardDetailsFromNIC_V3" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromCardNumber">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardDetailsFromCardNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromCardNumber_V2">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardDetailsFromCardNumber_V2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountUnbilledTransactions">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardAccountUnbilledTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPendingTransactions">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardPendingTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateCardNumber">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/validateCardNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardNumber_V2">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ValidateCardNumber_V2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccountNumber">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ValidateAccountNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomerNumber">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ValidateCustomerNumber" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateOTP">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ValidateOTP" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/SendOTP" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/PaymentCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisputeTransaction">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/DisputeTransaction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReIssueCardPIN">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ReIssueCardPIN" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtivateCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/AtivateCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/BlockCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LostCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/LostCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardSMSAleart">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/UpdateCardSMSAleart" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardOTPEmail">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/UpdateCardOTPEmail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateeStatementEmail">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/UpdateeStatementEmail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountEstatementEmail">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/UpdateAccountEstatementEmail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardReplacementRequest">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/CardReplacementRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintCardStatement">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/PrintCardStatement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestSupplementaryCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/RequestSupplementaryCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatementDate">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ChangeStatementDate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/FindCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSerial">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardSerial" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardNumberFromSerial">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardNumberFromSerial" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchDetails">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetBranchDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryBlockCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/TemporaryBlockCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TemporaryUnblockCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/TemporaryUnblockCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetailsFromNic">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCustomerDetailsFromNic" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetailsFromIdentityNo">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/GetCardDetailsFromIdentityNo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyWebCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ApplyWebCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplySupplymentryCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ApplySupplymentryCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardUpgrade">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/CardUpgrade" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateLifeInsurance">
+      <soap:operation soapAction="http://tempuri.org/ICreditCards/ActivateLifeInsurance" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICreditCardApplications" type="tns:ICreditCardApplications">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetApplicationStatus">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardApplications/GetApplicationStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardApplicationDetailsfromNIC">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardApplications/GetCardApplicationDetailsfromNIC" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCardApplication">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardApplications/AddCardApplication" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCardApplicationStatus">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardApplications/UpdateCardApplicationStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICreditCardRewards" type="tns:ICreditCardRewards">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetPointsBalance">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardRewards/GetPointsBalance" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPointsUsingCard">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardRewards/RedeemPointsUsingCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredPoints">
+      <soap:operation soapAction="http://tempuri.org/ICreditCardRewards/GetExpiredPoints" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMITServices" type="tns:IMITServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetCardAccountLast12MonthsSummaryforMIT">
+      <soap:operation soapAction="http://tempuri.org/IMITServices/GetCardAccountLast12MonthsSummaryforMIT" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccountInstallmentSummaryforMIT">
+      <soap:operation soapAction="http://tempuri.org/IMITServices/GetCardAccountInstallmentSummaryforMIT" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDialogServices" type="tns:IDialogServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RegisterGenieMerchantRegistration">
+      <soap:operation soapAction="http://tempuri.org/IDialogServices/RegisterGenieMerchantRegistration" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenieTransactions">
+      <soap:operation soapAction="http://tempuri.org/IDialogServices/UpdateGenieTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenieMerchantStatus">
+      <soap:operation soapAction="http://tempuri.org/IDialogServices/UpdateGenieMerchantStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICapexServices" type="tns:ICapexServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ReturnFile">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/ReturnFile" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestBalanceTransfer">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestBalanceTransfer" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestInstallmentAcceleration">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestInstallmentAcceleration" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestConvertTansactionToInstallment">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestConvertTansactionToInstallment" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequesteStatement">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequesteStatement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestForLetters">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestForLetters" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSingleTranLimit">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/ChangeSingleTranLimit" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestAddress">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestAddress" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAddress">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/ChangeAddress" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardCVC">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/ValidateCardCVC" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardCVC">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/GetCardCVC" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChangeAutopayDetails">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/AddChangeAutopayDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddChangeAccountAutopayDetails">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/AddChangeAccountAutopayDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TravelInsuranceRequest">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/TravelInsuranceRequest" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TravelInsuranceClaim">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/TravelInsuranceClaim" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTravellingAbroad">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/UpdateTravellingAbroad" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAdditionalDocumentRequests">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/SendAdditionalDocumentRequests" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPaymentTransactions">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/GetCardPaymentTransactions" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestLimitEnhancement">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestLimitEnhancement" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToReleaseFD">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestToReleaseFD" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestToLinkAccounts">
+      <soap:operation soapAction="http://tempuri.org/ICapexServices/RequestToLinkAccounts" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISABSServices" type="tns:ISABSServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ValidateSABSFacility">
+      <soap:operation soapAction="http://tempuri.org/ISABSServices/ValidateSABSFacility" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSABSFacility">
+      <soap:operation soapAction="http://tempuri.org/ISABSServices/UpdateSABSFacility" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelSABSFacility">
+      <soap:operation soapAction="http://tempuri.org/ISABSServices/CancelSABSFacility" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSABSTransaction">
+      <soap:operation soapAction="http://tempuri.org/ISABSServices/UpdateSABSTransaction" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IDebitCardServices" type="tns:IDebitCardServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetCustomerDetailsFromDebitCard">
+      <soap:operation soapAction="http://tempuri.org/IDebitCardServices/GetCustomerDetailsFromDebitCard" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebitCardDetailsFromIdentityNo">
+      <soap:operation soapAction="http://tempuri.org/IDebitCardServices/GetDebitCardDetailsFromIdentityNo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditCardServices">
+    <wsdl:port binding="tns:BasicHttpBinding_IServices" name="BasicHttpBinding_IServices">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/Services"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_ICreditCards" name="BasicHttpBinding_ICreditCards">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/CreditCards"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_ICreditCardApplications" name="BasicHttpBinding_ICreditCardApplications">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/CreditCardApplications"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_ICreditCardRewards" name="BasicHttpBinding_ICreditCardRewards">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/CreditCardRewards"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_IMITServices" name="BasicHttpBinding_IMITServices">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/MITServices"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_IDialogServices" name="BasicHttpBinding_IDialogServices">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/DialogServices"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_ICapexServices" name="BasicHttpBinding_ICapexServices">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/CapexServices"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_ISABSServices" name="BasicHttpBinding_ISABSServices">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/SABSServices"/>
+    </wsdl:port>
+    <wsdl:port binding="tns:BasicHttpBinding_IDebitCardServices" name="BasicHttpBinding_IDebitCardServices">
+      <soap:address location="http://192.125.125.154/webservices/CreditCardServices.svc/DebitCardServices"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

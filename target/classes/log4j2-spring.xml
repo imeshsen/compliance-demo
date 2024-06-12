@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+    <Properties>
+        <Property name="log-path">/usr/IBM/WebSphere/AppServer/profiles/SB_JAVA_OMNI/logs/OCR/transfer</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%X{id}] [%X{apiName}] [%X{user}] [%X{userGroup}]%c{1} - %msg%n
+                </pattern>>
+            </PatternLayout>
+        </Console>
+        <!--  
+        <File name="App-File-Appender" fileName="${log-path}/transferDetails.log">
+          locationInfo=true
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%X{Method}] [%X{TransactionReference}] [%X{PaymentID}] [%X{BillerID}] [%X{Method}]%c{1} - %msg%n
+                </pattern>
+            </PatternLayout>
+        </File>
+        --> 
+        
+        <!--  Rolling File Appender -->
+		<RollingFile name="App-File-Appender" fileName="${log-path}/transfer.log"
+		              filePattern="${log-path}/transfer_%d{yyyy-MM-dd}-%i.log"> 
+		    <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="ACCEPT"/>
+		               
+		    <PatternLayout>
+		        <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%X{id}] [%X{apiName}] [%X{TransactionReference}] [%X{BillerID}] [%X{Method}]%c{1} - %msg%n
+                </pattern>
+		    </PatternLayout>
+		    <Policies>
+		    	<TimeBasedTriggeringPolicy interval="1"/>
+				<SizeBasedTriggeringPolicy size="100MB" />
+		    </Policies>
+		    <DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		
+		<RollingFile name="Error-File-Appender" fileName="${log-path}/transferError.log" 
+		              filePattern="${log-path}/transferError_%d{yyyy-MM-dd}-%i.log">
+		   <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+		   
+		   <PatternLayout>
+		        <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%X{id}] [%X{apiName}] [%X{TransactionReference}] [%X{PaymentID}] [%X{BillerID}] [%X{Method}]%c{1} - %msg%n
+                </pattern>
+		    </PatternLayout>
+		    <Policies>
+		    	<TimeBasedTriggeringPolicy interval="1"/>
+		        <SizeBasedTriggeringPolicy size="100MB" />
+		    </Policies>
+		    <DefaultRolloverStrategy max="10"/>
+		</RollingFile>  
+		
+        <File name="SpringBoot-File-Appender" fileName="${log-path}/transferSpringBoot.log" >
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t][%X{id}] [%X{apiName}] [%X{TransactionReference}] [%X{PaymentID}] [%X{BillerID}] [%X{Method}]%c{1} - %msg%n
+                </pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="info" additivity="false">
+            <AppenderRef ref="SpringBoot-File-Appender"/>
+           <!-- <AppenderRef ref="Console-Appender"/>-->
+            <AppenderRef ref="Error-File-Appender"/>
+        </Logger>
+        <Logger name="lk.sampath.oc.Transfers" level="info" additivity="false">
+            <AppenderRef ref="App-File-Appender"/>
+          <!--   <AppenderRef ref="Console-Appender"/> -->
+            <AppenderRef ref="Error-File-Appender"/>
+         </Logger>
+         
+		<logger name="org.springframework.boot.context.web.ErrorPageFilter">
+			<level value="OFF" />
+		</logger>
+        <Root>
+            <AppenderRef ref="Console-Appender"/>
+        </Root>
+    </Loggers>
+</Configuration>

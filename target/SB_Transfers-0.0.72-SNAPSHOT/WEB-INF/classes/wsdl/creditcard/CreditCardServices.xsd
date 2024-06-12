@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://tempuri.org/">
+  <xsd:import namespace="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects" schemaLocation="CreditCardServices_1.xsd"/>
+  <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon" schemaLocation="CreditCardServices_1_2.xsd"/>
+  <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects" schemaLocation="CreditCardServices_1_2_3.xsd"/>
+  <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant" schemaLocation="CreditCardServices_1_2_3_4.xsd"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="TestService">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Values" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TestServiceResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="TestServiceResult" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetMissedCallBalanceMessage">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="contactNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetMissedCallBalanceMessageResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetMissedCallBalanceMessageResult" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardOTB">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardOTBResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardOTBResult" type="xsd:decimal"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatements">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatementsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountStatementsResult" nillable="true" type="q1:ArrayOfclassStatementData" xmlns:q1="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatements_V2">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatements_V2Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountStatements_V2Result" nillable="true" type="q2:ResponseMessageClass.GetCardAccountStatements_V2Response" xmlns:q2="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountInstallments">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountInstallmentsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountInstallmentsResult" nillable="true" type="q3:ArrayOfclassInstallmentData" xmlns:q3="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountLastStatement">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountLastStatementResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountLastStatementResult" nillable="true" type="q4:ArrayOfclassStatementData" xmlns:q4="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountLast12MonthsStats">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountLast12MonthsStatsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountLast12MonthsStatsResult" nillable="true" type="q5:ArrayOfclassStatementStatData" xmlns:q5="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatementTransactions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="StatementSerailNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatementTransactionsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountStatementTransactionsResult" nillable="true" type="q6:ArrayOfclassCreditCardTransactions" xmlns:q6="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatementTransactions_V2">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="StatementSerailNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountStatementTransactions_V2Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountStatementTransactions_V2Result" nillable="true" type="q7:ResponseMessageClass.GetCardAccountStatementTransactions_V2Response" xmlns:q7="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromNIC">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromNICResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardDetailsFromNICResult" nillable="true" type="q8:ArrayOfCardDetailsClass" xmlns:q8="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromNIC_V2">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromNIC_V2Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardDetailsFromNIC_V2Result" nillable="true" type="q9:ArrayOfCardDetails_V2Class" xmlns:q9="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromNIC_V3">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromNIC_V3Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardDetailsFromNIC_V3Result" nillable="true" type="q10:ResponseMessageClass.GetCardDetailsFromNIC_V3Response" xmlns:q10="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromCardNumber">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromCardNumberResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardDetailsFromCardNumberResult" nillable="true" type="q11:ArrayOfCardDetailsClass" xmlns:q11="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromCardNumber_V2">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromCardNumber_V2Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardDetailsFromCardNumber_V2Result" nillable="true" type="q12:ResponseMessageClass.GetCardDetailsFromCardNumber_V2Response" xmlns:q12="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountUnbilledTransactions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerailNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountUnbilledTransactionsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountUnbilledTransactionsResult" nillable="true" type="q13:ArrayOfclassCreditCardTransactions" xmlns:q13="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardPendingTransactions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardPendingTransactionsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardPendingTransactionsResult" nillable="true" type="q14:ResponseMessageClass.GetCardPendingTransactionsResponse" xmlns:q14="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="validateCardNumber">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="validateCardNumberResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="validateCardNumberResult" type="xsd:boolean"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateCardNumber_V2">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateCardNumber_V2Response">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ValidateCardNumber_V2Result" nillable="true" type="q15:ResponseMessageClass.ValidateCardNumber_V2Response" xmlns:q15="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateAccountNumber">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateAccountNumberResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ValidateAccountNumberResult" nillable="true" type="q16:ResponseMessageClass.ValidateAccountNumberResponse" xmlns:q16="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateCustomerNumber">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CustomerNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateCustomerNumberResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ValidateCustomerNumberResult" nillable="true" type="q17:ResponseMessageClass.ValidateCustomerNumberResponse" xmlns:q17="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateOTP">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Serno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="OTPNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateOTPResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ValidateOTPResult" nillable="true" type="q18:ResponseMessageClass.ValidateOTPResponse" xmlns:q18="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SendOTP">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SendOTPResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="SendOTPResult" nillable="true" type="q19:ResponseMessageClass.SendOTPResponse" xmlns:q19="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="PaymentCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="AccountNumber" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Amount" type="xsd:double"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="PaymentCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="PaymentCardResult" nillable="true" type="q20:ResponseMessageClass.PaymentCardResponse" xmlns:q20="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="DisputeTransaction">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="transactionserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="DisputeTransactionResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="DisputeTransactionResult" nillable="true" type="q21:ResponseMessageClass.DisputeTransactionResponse" xmlns:q21="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ReIssueCardPIN">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ReIssueCardPINResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ReIssueCardPINResult" nillable="true" type="q22:ResponseMessageClass.ReIssueCardPINResponse" xmlns:q22="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AtivateCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="expDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AtivateCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="AtivateCardResult" nillable="true" type="q23:ResponseMessageClass.ActivateCardResponse" xmlns:q23="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="BlockCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="reason" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="BlockCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="BlockCardResult" nillable="true" type="q24:ResponseMessageClass.BlockCardResponse" xmlns:q24="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="LostCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="branchCode" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="LostCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="LostCardResult" nillable="true" type="q25:ResponseMessageClass.LostCardResponse" xmlns:q25="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateCardSMSAleart">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="SMSAlertNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateCardSMSAleartResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateCardSMSAleartResult" nillable="true" type="q26:ResponseMessageClass.UpdateCardSMSAleartResponse" xmlns:q26="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateCardOTPEmail">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="EmailAddress" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateCardOTPEmailResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateCardOTPEmailResult" nillable="true" type="q27:ResponseMessageClass.UpdateCardOTPEmailResponse" xmlns:q27="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateeStatementEmail">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="EmailAddress" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateeStatementEmailResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateeStatementEmailResult" nillable="true" type="q28:ResponseMessageClass.UpdateeStatementEmailResponse" xmlns:q28="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateAccountEstatementEmail">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="EmailAddress" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateAccountEstatementEmailResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateAccountEstatementEmailResult" nillable="true" type="q29:ResponseMessageClass.UpdateAccountEstatementEmailResponse" xmlns:q29="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CardReplacementRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardSerNo" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="BranchId" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CardReplacementRequestResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="CardReplacementRequestResult" nillable="true" type="q30:ResponseMessageClass.CardReplacementRequestResponse" xmlns:q30="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="PrintCardStatement">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="fromDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="toDate" type="xsd:dateTime"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="PrintCardStatementResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="PrintCardStatementResult" nillable="true" type="q31:ResponseMessageClass.PrintCardStatementResponse" xmlns:q31="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestSupplementaryCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestSupplementaryCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestSupplementaryCardResult" nillable="true" type="q32:ResponseMessageClass.RequestSupplementaryCardResponse" xmlns:q32="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ChangeStatementDate">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ChangeStatementDateResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ChangeStatementDateResult" nillable="true" type="q33:ResponseMessageClass.ChangeStatementDateResponse" xmlns:q33="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="FindCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="FindCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="FindCardResult" nillable="true" type="q34:ResponseMessageClass.FindCardResponse" xmlns:q34="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardSerial">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardNoLastFourDigits" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="nic" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardSerialResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardSerialResult" nillable="true" type="q35:ResponseMessageClass.GetCardSerialResponse" xmlns:q35="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardNumberFromSerial">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardNumberFromSerialResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardNumberFromSerialResult" nillable="true" type="q36:ResponseMessageClass.GetCardNumberFromSerialResponse" xmlns:q36="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetBranchDetails">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="branchName" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetBranchDetailsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetBranchDetailsResult" nillable="true" type="q37:ResponseMessageClass.GetBranchDetailsResponse" xmlns:q37="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TemporaryBlockCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TemporaryBlockCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="TemporaryBlockCardResult" nillable="true" type="q38:ResponseMessageClass.TemporaryBlockCardResponse" xmlns:q38="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TemporaryUnblockCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TemporaryUnblockCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="TemporaryUnblockCardResult" nillable="true" type="q39:ResponseMessageClass.TemporaryUnblockCardResponse" xmlns:q39="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCustomerDetailsFromNic">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="IdentityNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCustomerDetailsFromNicResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCustomerDetailsFromNicResult" nillable="true" type="q40:PersonDetailsClass" xmlns:q40="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromIdentityNo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="IdentityType" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="IdentityNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardDetailsFromIdentityNoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardDetailsFromIdentityNoResult" nillable="true" type="q41:ArrayOfCardDetails_V2Class" xmlns:q41="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ApplyWebCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="person" nillable="true" type="q42:PersonClass" xmlns:q42="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        <xsd:element minOccurs="0" name="lstAddress" nillable="true" type="q43:ArrayOfAddressClass" xmlns:q43="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ApplyWebCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ApplyWebCardResult" nillable="true" type="q44:ResponseMessageClass.ApplyWebCardResponse" xmlns:q44="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ApplySupplymentryCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="person" nillable="true" type="q45:PersonClass" xmlns:q45="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ApplySupplymentryCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ApplySupplymentryCardResult" nillable="true" type="q46:ResponseMessageClass.ApplySupplymentryCardResponse" xmlns:q46="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CardUpgrade">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CardUpgradeResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="CardUpgradeResult" nillable="true" type="q47:ResponseMessageClass.CardUpgradeResponse" xmlns:q47="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ActivateLifeInsurance">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ActivateLifeInsuranceResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ActivateLifeInsuranceResult" nillable="true" type="q48:ResponseMessageClass.ActivateLifeInsuranceResponse" xmlns:q48="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetApplicationStatus">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="applicationNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetApplicationStatusResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetApplicationStatusResult" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardApplicationDetailsfromNIC">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="nicNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardApplicationDetailsfromNICResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardApplicationDetailsfromNICResult" nillable="true" type="q49:ArrayOfclassCardApplicationDetails" xmlns:q49="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AddCardApplication">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="uapplication" nillable="true" type="q50:classCardApplicationAdd" xmlns:q50="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AddCardApplicationResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="AddCardApplicationResult" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateCardApplicationStatus">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="applicationNo" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="applicationStatus" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateCardApplicationStatusResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateCardApplicationStatusResult" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetPointsBalance">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="pointsType" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetPointsBalanceResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetPointsBalanceResult" nillable="true" type="q51:ResponseMessageClass.GetPointsBalanceResponse" xmlns:q51="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RedeemPointsUsingCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="narration" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="amount" type="xsd:decimal"/>
+        <xsd:element minOccurs="0" name="cardno" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="transerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RedeemPointsUsingCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RedeemPointsUsingCardResult" nillable="true" type="q52:ResponseMessageClass.RedeemPointsUsingCardResponse" xmlns:q52="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetExpiredPoints">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="NIC" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="ExpiryDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="PointsType" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetExpiredPointsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetExpiredPointsResult" nillable="true" type="q53:ResponseMessageClass.GetExpiredPointsResponse" xmlns:q53="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountLast12MonthsSummaryforMIT">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountLast12MonthsSummaryforMITResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountLast12MonthsSummaryforMITResult" nillable="true" type="q54:classStatementStatDataSummaryforMIT" xmlns:q54="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountInstallmentSummaryforMIT">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerialNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardAccountInstallmentSummaryforMITResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardAccountInstallmentSummaryforMITResult" nillable="true" type="q55:classInstallmentSummaryforMIT" xmlns:q55="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RegisterGenieMerchantRegistration">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="uSubMerchantData" nillable="true" type="q56:SubMerchant" xmlns:q56="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RegisterGenieMerchantRegistrationResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RegisterGenieMerchantRegistrationResult" nillable="true" type="q57:ResponseMessageClass.RegisterGenieMerchantRegistrationResponse" xmlns:q57="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateGenieTransactions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="uSubMerchantTransactions" nillable="true" type="q58:SubMerchantTransactions" xmlns:q58="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateGenieTransactionsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateGenieTransactionsResult" nillable="true" type="q59:ResponseMessageClass.UpdateGenieTransactionsResponse" xmlns:q59="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateGenieMerchantStatus">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="uSubMerchantChangeStatus" nillable="true" type="q60:SubMerchantChangeStatus" xmlns:q60="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateGenieMerchantStatusResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateGenieMerchantStatusResult" nillable="true" type="q61:ResponseMessageClass.UpdateGenieMerchantStatusResponse" xmlns:q61="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ReturnFile">
+    <xsd:complexType>
+      <xsd:sequence/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ReturnFileResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ReturnFileResult" nillable="true" type="xsd:base64Binary"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestBalanceTransfer">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="otherbankcardno" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="amount" type="xsd:decimal"/>
+        <xsd:element minOccurs="0" name="installmentperiod" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestBalanceTransferResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestBalanceTransferResult" nillable="true" type="q62:ResponseMessageClass.RequestBalanceTransferResponse" xmlns:q62="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestInstallmentAcceleration">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="installmentserno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestInstallmentAccelerationResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestInstallmentAccelerationResult" nillable="true" type="q63:ResponseMessageClass.RequestInstallmentAccelerationResponse" xmlns:q63="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestConvertTansactionToInstallment">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="transactionserno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="noofmonths" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestConvertTansactionToInstallmentResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestConvertTansactionToInstallmentResult" nillable="true" type="q64:ResponseMessageClass.RequestConvertTansactionToInstallmentResponse" xmlns:q64="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequesteStatement">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="StatementDate" type="xsd:dateTime"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequesteStatementResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequesteStatementResult" nillable="true" type="q65:ResponseMessageClass.RequesteStatementResponse" xmlns:q65="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestForLetters">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="letterTypeSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="recAdd" nillable="true" type="q66:AddressClass" xmlns:q66="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+        <xsd:element minOccurs="0" name="others" nillable="true" type="q67:ArrayOfclassReference" xmlns:q67="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestForLettersResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestForLettersResult" nillable="true" type="q68:ResponseMessageClass.RequestForLettersResponse" xmlns:q68="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ChangeSingleTranLimit">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="amount" type="xsd:double"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ChangeSingleTranLimitResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ChangeSingleTranLimitResult" nillable="true" type="q69:ResponseMessageClass.ChangeSingleTranLimitResponse" xmlns:q69="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestAddress">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestAddressResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestAddressResult" nillable="true" type="q70:ResponseMessageClass.RequestAddressResponse" xmlns:q70="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ChangeAddress">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AddSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="address" nillable="true" type="q71:AddressClass" xmlns:q71="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ChangeAddressResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ChangeAddressResult" nillable="true" type="q72:ResponseMessageClass.ChangeAddressResponse" xmlns:q72="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateCardCVC">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="CVC" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="ExpiryDate" type="xsd:dateTime"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateCardCVCResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ValidateCardCVCResult" nillable="true" type="q73:ResponseMessageClass.ValidateCardCVCResponse" xmlns:q73="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardCVC">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardCVCResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardCVCResult" nillable="true" type="q74:ResponseMessageClass.GetCardCVCResponse" xmlns:q74="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AddChangeAutopayDetails">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="rate" type="xsd:double"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AddChangeAutopayDetailsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="AddChangeAutopayDetailsResult" nillable="true" type="q75:ResponseMessageClass.AddChangeAutopayDetailsResponse" xmlns:q75="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AddChangeAccountAutopayDetails">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="AccountSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="rate" type="xsd:double"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="AddChangeAccountAutopayDetailsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="AddChangeAccountAutopayDetailsResult" nillable="true" type="q76:ResponseMessageClass.AddChangeAccountAutopayDetailsResponse" xmlns:q76="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TravelInsuranceRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardSerNo" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="fromDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="toDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="destination" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="insurerList" nillable="true" type="q77:ArrayOfclassTravelInsurer" xmlns:q77="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TravelInsuranceRequestResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="TravelInsuranceRequestResult" nillable="true" type="q78:ResponseMessageClass.TravelInsuranceRequestResponse" xmlns:q78="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TravelInsuranceClaim">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardSerNo" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="TravelInsuranceClaimResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="TravelInsuranceClaimResult" nillable="true" type="q79:ResponseMessageClass.TravelInsuranceClaimResponse" xmlns:q79="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateTravellingAbroad">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardSerNo" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="FromDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="ToDate" type="xsd:dateTime"/>
+        <xsd:element minOccurs="0" name="destinations" nillable="true" type="q80:ArrayOfclassTravelAbroad" xmlns:q80="http://schemas.datacontract.org/2004/07/CommonsClasses.CommonObjects"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateTravellingAbroadResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateTravellingAbroadResult" nillable="true" type="q81:ResponseMessageClass.UpdateTravellingAbroadResponse" xmlns:q81="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SendAdditionalDocumentRequests">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="SendAdditionalDocumentRequestsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="SendAdditionalDocumentRequestsResult" nillable="true" type="q82:ResponseMessageClass.SendAdditionalDocumentRequestsResponse" xmlns:q82="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardPaymentTransactions">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="accSerNo" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="fromDate" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="toDate" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCardPaymentTransactionsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCardPaymentTransactionsResult" nillable="true" type="q83:ResponseMessageClass.GetCardPaymentTransactionsResponse" xmlns:q83="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestLimitEnhancement">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestLimitEnhancementResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestLimitEnhancementResult" nillable="true" type="q84:ResponseMessageClass.RequestLimitEnhancementResponse" xmlns:q84="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestToReleaseFD">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestToReleaseFDResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestToReleaseFDResult" nillable="true" type="q85:ResponseMessageClass.RequestToReleaseFDResponse" xmlns:q85="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestToLinkAccounts">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="CardSerno" type="xsd:long"/>
+        <xsd:element minOccurs="0" name="accountNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="RequestToLinkAccountsResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="RequestToLinkAccountsResult" nillable="true" type="q86:ResponseMessageClass.RequestToLinkAccountsResponse" xmlns:q86="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateSABSFacility">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityNo" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityProviderCode" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="ValidateSABSFacilityResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="ValidateSABSFacilityResult" nillable="true" type="q87:ResponseMessageClass.ValidateSABSFacilityResponse" xmlns:q87="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateSABSFacility">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityNo" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityProviderCode" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateSABSFacilityResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateSABSFacilityResult" nillable="true" type="q88:ResponseMessageClass.UpdateSABSFacilityResponse" xmlns:q88="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CancelSABSFacility">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityNo" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityProviderCode" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="cardNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="CancelSABSFacilityResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="CancelSABSFacilityResult" nillable="true" type="q89:ResponseMessageClass.CancelSABSFacilityResponse" xmlns:q89="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateSABSTransaction">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityNo" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="facilityProviderCode" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="amount" type="xsd:double"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="UpdateSABSTransactionResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="UpdateSABSTransactionResult" nillable="true" type="q90:ResponseMessageClass.UpdateSABSTransactionResponse" xmlns:q90="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCustomerDetailsFromDebitCard">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="DebitCardNumber" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetCustomerDetailsFromDebitCardResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetCustomerDetailsFromDebitCardResult" nillable="true" type="q91:ResponseMessageClass.GetCustomerDetailsFromDebitCardResponse" xmlns:q91="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetDebitCardDetailsFromIdentityNo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="authID" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="IdentityType" nillable="true" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="IdentityNo" nillable="true" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="GetDebitCardDetailsFromIdentityNoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="GetDebitCardDetailsFromIdentityNoResult" nillable="true" type="q92:ResponseMessageClass.GetDebitCardDetailsFromIdentityNoResponse" xmlns:q92="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassCommon"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

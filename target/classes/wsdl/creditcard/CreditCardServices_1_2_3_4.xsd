@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects.SubMerchant">
+  <xsd:import namespace="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects" schemaLocation="CreditCardServices_1_2_3.xsd"/>
+  <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" schemaLocation="CreditCardServices_1_2_3_4_5.xsd"/>
+  <xsd:complexType name="SubMerchant">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="AddressCommercial" nillable="true" type="q1:AddressClass" xmlns:q1="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      <xsd:element minOccurs="0" name="Addresslegal" nillable="true" type="q2:AddressClass" xmlns:q2="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      <xsd:element minOccurs="0" name="BusinessDescrption" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="BusinessNature" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="BusinessRegistrationNumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ContactNumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Documents" nillable="true" type="q3:ArrayOfstring" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xsd:element minOccurs="0" name="LegalStatus" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="MerchantID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="NameBusiness" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="NameLegal" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Owners" nillable="true" type="q4:ArrayOfPersonClass" xmlns:q4="http://schemas.datacontract.org/2004/07/CreditCardServices.ClassActive.ClassBusinessObjects"/>
+      <xsd:element minOccurs="0" name="PaymentAccount" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="PaymentBankCode" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="PaymentBranchCode" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="PreviousRequestID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ProcessorID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Rate" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="RequestID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="emailAddress" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SubMerchant" nillable="true" type="tns:SubMerchant"/>
+  <xsd:complexType name="SubMerchantTransactions">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Amount" type="xsd:decimal"/>
+      <xsd:element minOccurs="0" name="AuthID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Currency" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="MaskCardNumber" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="ProcessorID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SubMID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="TranDateTime" type="xsd:dateTime"/>
+      <xsd:element minOccurs="0" name="TransactionID" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SubMerchantTransactions" nillable="true" type="tns:SubMerchantTransactions"/>
+  <xsd:complexType name="SubMerchantChangeStatus">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ProcessorID" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="SubMID" nillable="true" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SubMerchantChangeStatus" nillable="true" type="tns:SubMerchantChangeStatus"/>
+</xsd:schema>
